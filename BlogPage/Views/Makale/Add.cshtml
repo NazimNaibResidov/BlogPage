@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+
+<div class="col-lg-9">
+    <div class="panel panel-admin">
+        <h1 style="text-align:center;font-weight:bold;color:black">Makalae Ekele</h1>
+        <div class="panel-body">
+            <form action="/Makale/Add" class="form-horizontal form-bordered" method="post" enctype="multipart/form-data">
+                <div class="form-group has-success">
+                    <label class="col-md-3 control-label" for="inputSuccess">Header</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" name="Baslik" id="inputSuccess">
+                    </div>
+                </div>
+
+
+
+                <div class="form-group has-success">
+                    <label class="col-md-3 control-label">Category</label>
+                    <div class="col-md-8">
+                        <select data-plugin-selecttwo="" name="KategoriID" class="form-control populate">
+
+                            @foreach (Kategori item in ViewBag.kat)
+                            {
+                                <option value="@item.id">@item.Adi</option>
+                            }
+
+
+                        </select>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="form-group has-success">
+                    <label class="col-md-3 control-label" for="textareaDefault">Textarea</label>
+                    <div class="col-md-8">
+                        <textarea style="resize:none;height:180px" class="form-control" rows="3" name="Icerik"></textarea>
+                        <p>
+
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group has-success" style="float:right">
+                   
+                    <div class="col-md-3">
+                        <input  type="file" name="File" />
+                       
+                    </div>
+                </div>
+                <div class="form-group has-success">
+                    
+                    <div class="col-md-4" style="left:220px">
+                        <input class="btn btn-success" type="submit"  value="Save" />
+                       
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

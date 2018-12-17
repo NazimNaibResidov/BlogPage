@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+    <div class="col-sm-7" style="margin-right:180px;" >
+        <div class="featured-box featured-box-primary align-left mt-xlg" style="height:580px">
+            <div class="box-content">
+
+                <form action="/Users/Register" enctype="multipart/form-data" id="frmSignIn" class="register-form" method="post">
+                    <h4 class="heading-primary text-uppercase mb-md">Register</h4>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label>Username </label>
+                                <input type="text" name="name" class="form-control input-lg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label>surname </label>
+                                <input type="text"
+                                       name="surname" class="form-control input-lg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label>Password </label>
+                                <input type="password" name="password" class="form-control input-lg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label>Email </label>
+                                <input type="email"
+                                       name="email" class="form-control input-lg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label>Image </label>
+                                <input type="file"
+                                       name="File" class="form-control input-lg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <label class="messag" for="Login">
+                                <a class="btn" style="font-weight:bold">Login</a>
+                            </label>
+
+                        </div>
+                        <div class="col-md-6">
+                            <input type="submit" value="Login" class="btn btn-primary pull-right mb-xl" data-loading-text="Loading...">
+                        </div>
+                    </div>
+
+                </form>
+              
+
+                        <form action="/Users/Enter" id="frmSignIn" method="post" style="display:none">
+                            <h4 class="heading-primary text-uppercase mb-md">Login</h4>
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <label>Username </label>
+                                        <input type="text" name="name" class="form-control input-lg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <label>Password </label>
+                                        <input type="password" name="password" class="form-control input-lg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="messag" for="Login">
+                                        <a class="btn" style="font-weight:bold">Register</a>
+                                    </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="submit" value="Login" class="btn btn-primary pull-right mb-xl" data-loading-text="Loading...">
+                                </div>
+                            </div>
+
+                        </form>
+                      
+                    </div>
+                </div>
+            </div>
+@section javascrip{
+    
+    <script type="text/javascript">
+
+        $('.messag a').click(function () {
+            $('form').animate({ height: "toggle", opacity: "toggle" }, "show");
+            
+        });
+    </script>
+    }
+
+
+

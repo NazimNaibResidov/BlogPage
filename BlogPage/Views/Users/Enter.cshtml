@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Enter";
+}
+
+<div class="col-sm-7" style="margin-right:180px;padding-bottom:40px">
+    <div class="featured-box featured-box-primary align-left mt-xlg" style="height: 390px;">
+        <div class="box-content">
+
+            
+
+
+            <form action="/Users/Enter" id="frmSignIn" method="post">
+                <h4 class="heading-primary text-uppercase mb-md">Login</h4>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Username </label>
+                            <input type="text" name="name" class="form-control input-lg">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Password </label>
+                            <input type="password" name="password" class="form-control input-lg">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="messag" for="Login">
+                            <a class="btn" style="font-weight:bold">Register</a>
+                        </label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="submit" value="Login" class="btn btn-primary pull-right mb-xl" data-loading-text="Loading...">
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = null;
+}
+@model IEnumerable<Makale>
+<div class="tabs mb-xlg">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#popularPosts" data-toggle="tab"><i class="fa fa-star"></i> Popular</a></li>
+        <li><a href="#recentPosts" data-toggle="tab">Recent</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="popularPosts">
+            <ul class="simple-post-list">
+                @foreach (Makale item in ViewBag.pop)
+                {
+                    <li>
+                        <div class="post-image">
+                            <div class="img-thumbnail">
+                                <a href="blog-post.html">
+                                    <img src="@item.Resim.Samll" alt="@item.Resim.Adi">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="post-info">
+                            <a href="/Makale/Detay/@item.id">@item.Baslik</a>
+                            <div class="post-meta">
+                               @item.EkelemeTarixi.ToString("mm dd YY");
+                            </div>
+                        </div>
+                    </li>
+                }
+
+            </ul>
+        </div>
+        <div class="tab-pane" id="recentPosts">
+            <ul class="simple-post-list">
+
+
+                @foreach (Makale item in Model)
+                {
+                    <li>
+                        <div class="post-image">
+                            <div class="img-thumbnail">
+                                <a href="blog-post.html">
+                                    <img src="@item.Resim.Samll" alt="@item.Resim.Adi">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="post-info">
+                            <a href="/Makale/Detay/@item.id">@item.Baslik</a>
+                            <div class="post-meta">
+                                @item.EkelemeTarixi.ToString("mm dd YY");
+                            </div>
+                        </div>
+                    </li>
+
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+<hr>
+

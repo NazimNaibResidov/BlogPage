@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+<div class="col-sm-7" style="margin-right:180px;">
+    <div class="featured-box featured-box-primary align-left mt-xlg" style="height:580px">
+        <div class="box-content">
+
+            <form action="/Roles/Add" enctype="multipart/form-data" id="frmSignIn" class="register-form" method="post">
+                <h4 class="heading-primary text-uppercase mb-md">Rolse</h4>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Role Name </label>
+                            <input type="text" name="name" class="form-control input-lg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <label class="messag" for="Login">
+                            <a class="btn" style="font-weight:bold">Login</a>
+                        </label>
+
+                    </div>
+                    <div class="col-md-6">
+                        <input type="submit" value="Login" class="btn btn-primary pull-right mb-xl" data-loading-text="Loading...">
+                    </div>
+                </div>
+            </form>
+
+
+          
+
+        </div>
+    </div>
+</div>
+

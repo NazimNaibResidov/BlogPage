@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+   
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>@ViewBag.Titel</title>
+
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Porto - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
+
+  
+    <link rel="shortcut icon" href="/Content/img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/Content/img/apple-touch-icon.png">
+
+  
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Web Fonts  -->
+    <link href="/Content/https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/Content/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Content/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Content/vendor/animate/animate.min.css">
+    <link rel="stylesheet" href="/Content/vendor/simple-line-icons/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="/Content/vendor/owl.carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/Content/vendor/owl.carousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/Content/vendor/magnific-popup/magnific-popup.min.css">
+    <link rel="stylesheet" href="/Content/css/theme.css">
+    <link rel="stylesheet" href="/Content/css/theme-elements.css">
+    <link rel="stylesheet" href="/Content/css/theme-blog.css">
+    <link rel="stylesheet" href="/Content/css/theme-shop.css">
+    <link rel="stylesheet" href="/Content/css/skins/default.css">
+    <link rel="stylesheet" href="/Content/css/custom.css">
+    <script src="/Content/vendor/modernizr/modernizr.min.js"></script>
+
+    @RenderSection("header", false);
+
+</head>
+<body>
+
+    <div class="body">
+
+        <header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 57, 'stickySetTop': '-57px', 'stickyChangeLogo': true}" style="min-height: 125px;">
+            <div class="header-body" style="top: 0px;">
+                <div class="header-container container">
+                    <div class="header-row">
+                        <div class="header-column">
+                            <div class="header-logo" style="width: 126px; height: 84px;">
+                                <a href="Javascrip:void(0)">
+                                    <img alt="Porto" data-sticky-width="82" data-sticky-height="40" data-sticky-top="33" src="/Content/tenor.gif" style="top: 0px; width: 111px; height: 54px;" width="121" height="74">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="header-column">
+                            
+                            <br />
+                            <br />
+                            <div class="header-row">
+                                <div class="header-nav">
+                                    <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+                                        <i class="fa fa-bars"></i>
+                                    </button>
+                                    <ul class="header-social-icons social-icons hidden-xs">
+                                        <li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                        <li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                        <li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                    <div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
+                                        <nav>
+                                            <ul class="nav nav-pills" id="mainNav">
+
+@if(User.IsInRole("Admin"))
+{
+                                                <li class="dropdown">
+                                                    <a class="dropdown-toggle" href="#">
+                                                      Makale
+                                                        <i class="fa fa-caret-down"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="/Home/Index">Index</a></li>
+                                                        <li><a href="/Makale/Add">Add Makale</a></li>
+                                                    </ul>
+                                                </li>
+}
+                                                
+
+
+                                                @if (User.Identity.IsAuthenticated)
+                                                {
+                                                    <li class="">
+                                                        <a href="/Users/Logout">
+                                                            Log Out
+                                                        </a>
+                                                    </li>
+                                                }
+                                                else
+                                                {
+                                                    <li class="">
+                                                        <a href="/Users/Enter">
+                                                            Log In
+                                                        </a>
+                                                    </li>
+                                                }
+
+
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div role="main" class="main">
+
+            <section class="page-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                           
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1><marquee style="color:white;width:1200px">CODE IS LIFE</marquee></h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <div class="container">
+
+                <div class="row">
+
+                    @RenderBody()
+
+                    <div class="col-md-3">
+                        <aside class="sidebar">
+                            @{
+                                Html.RenderAction("Search", "Home");
+                                Html.RenderAction("Index", "Category");
+                                Html.RenderAction("Popular", "Home");
+                            }
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <footer id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="footer-ribbon">
+                            <span>Get in Touch</span>
+                        </div>
+                        
+                        
+                        <div class="col-md-4">
+                            <div class="contact-details">
+                                <h4>Contact Us</h4>
+                                <ul class="contact">
+                                    <li><p><i class="fa fa-map-marker"></i> <strong>Address:</strong> LVOV Ukraine</p></li>
+                                    <li><p><i class="fa fa-phone"></i> <strong>Phone:</strong> (+380) 68 415 28 24</p></li>
+                                    <li><p><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="javascrip:void(0)">residovnaib77@gmail.com</a></p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="float:right">
+                            <h4>Follow Us</h4>
+                            <ul class="social-icons">
+                                <li class="social-icons-facebook"><a href="https://www.facebook.com/naib.residov" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li class="social-icons-twitter"><a href="JavaScrip:void(0)" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li class="social-icons-linkedin"><a href="JavaScrip:void(0)" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <a href="JavaScrip:void(0)" class="logo">
+                                    <img alt="Programmer" class="img-responsive" src="/Content/Age.png">
+                                </a>
+                            </div>
+                            <div  class="col-md-10">
+                                <p style="text-align:center;color:white;font-size:24px">© Naib Reshidov 2018</p>
+                            </div>
+                            <div class="col-md-4">
+                                <nav id="sub-menu">
+                                    <ul>
+                                       
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Vendor -->
+        <script src="/Content/vendor/jquery/jquery.min.js"></script>
+        <script src="/Content/vendor/jquery.appear/jquery.appear.min.js"></script>
+        <script src="/Content/vendor/jquery.easing/jquery.easing.min.js"></script>
+        <script src="/Content/vendor/jquery-cookie/jquery-cookie.min.js"></script>
+        <script src="/Content/vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/Content/vendor/common/common.min.js"></script>
+        <script src="/Content/vendor/jquery.validation/jquery.validation.min.js"></script>
+        <script src="/Content/vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+        <script src="/Content/vendor/jquery.gmap/jquery.gmap.min.js"></script>
+        <script src="/Content/vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+        <script src="/Content/vendor/isotope/jquery.isotope.min.js"></script>
+        <script src="/Content/vendor/owl.carousel/owl.carousel.min.js"></script>
+        <script src="/Content/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="/Content/vendor/vide/vide.min.js"></script>
+
+        <!-- Theme Base, Components and Settings -->
+        <script src="/Content/js/theme.js"></script>
+
+        <!-- Theme Custom -->
+        <script src="/Content/js/custom.js"></script>
+
+        <!-- Theme Initialization Files -->
+        <script src="/Content/js/theme.init.js"></script>
+
+        @RenderSection("javascrip", false);
+    </div>
+</body>
+</html>

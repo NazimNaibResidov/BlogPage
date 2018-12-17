@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "AUR";
+}
+
+<div class="col-lg-9">
+    <div class="panel panel-admin">
+        <h1 style="text-align:center;font-weight:bold;color:black">Makalae Ekele</h1>
+        <div class="panel-body">
+            <form action="/Roles/AUR" class="form-horizontal form-bordered" method="post" enctype="multipart/form-data">
+
+
+
+
+                <div class="form-group has-success">
+                    <label class="col-md-3 control-label">Roles</label>
+                    <div class="col-md-8">
+                        <select data-plugin-selecttwo="" name="roleName" class="form-control populate">
+
+                            @foreach (var item in ViewBag.roles)
+                            {
+                                <option value="@item">@item</option>
+                            }
+
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group has-success">
+                    <label class="col-md-3 control-label">Users</label>
+                    <div class="col-md-8">
+                        <select data-plugin-selecttwo="" name="userName" class="form-control populate">
+
+                            @foreach (MembershipUser item in ViewBag.user)
+                            {
+                                <option value="@item.UserName">@item.UserName</option>
+                            }
+
+
+                        </select>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="form-group has-success">
+
+                    <div class="col-md-4" style="left:220px">
+                        <input class="btn btn-success" type="submit" value="Save" />
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

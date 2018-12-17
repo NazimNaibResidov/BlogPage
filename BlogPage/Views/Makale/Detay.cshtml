@@ -1,0 +1,148 @@
+﻿
+@{
+    ViewBag.Title = "Detay";
+}
+@model Makale
+<div class="col-md-9">
+    <div class="blog-posts single-post">
+        <article class="post post-large blog-single-post">
+            <div class="post-image">
+                <div class="owl-carousel owl-theme owl-loaded owl-drag owl-carousel-init" data-plugin-options="{'items':1}">
+
+
+                    <div class="owl-stage-outer">
+                       
+
+                            <div class="owl-item " style="width: 848.333px;">
+                                <div>
+                                    <div class="img-thumbnail">
+                                        <img class="img-responsive" src="@Model.Resim.Big" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                   
+                </div>
+            </div>
+            <div class="post-date">
+                <span class="day">@Model.EkelemeTarixi.Day</span>
+                <span class="month">@Model.EkelemeTarixi.ToString("MMMM")</span>
+            </div>
+            <div class="post-content">
+                <h2><a href="Javascrip:void(0)">@Model.Baslik</a></h2>
+                <div class="post-meta">
+                    <span><i class="fa fa-user"></i> By <a href="#">@Model.Yazar.Adi @Model.Yazar.Soyadi</a> </span>
+
+                    <span><i class="fa fa-comments"></i> <a href="#">@Model.Yorums.Count Comments</a></span>
+                </div>
+                <p >@Model.Icerik;</p>
+
+
+                <div class="post-block post-share">
+                    <h3 class="heading-primary"><i class="fa fa-share"></i>Share this post</h3>
+                    <!-- AddThis Button BEGIN -->
+                    <div class="addthis_toolbox addthis_default_style ">
+                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                        <a class="addthis_button_tweet"></a>
+                        <a class="addthis_button_pinterest_pinit"></a>
+                        <a class="addthis_counter addthis_pill_style"></a>
+                    </div>
+                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53"></script>
+                    <!-- AddThis Button END -->
+                </div>
+                <div class="post-block post-author clearfix">
+                    <h3 class="heading-primary"><i class="fa fa-user"></i>Author</h3>
+                    <div class="img-thumbnail">
+                        <a href="/User/Detay/@Model.YazarID">
+                            <img src="@Model.Resim.Yazar" alt="@Model.Resim.Adi">
+                        </a>
+                    </div>
+                    <p><strong class="name"><a href="/User/Detay/@Model.YazarID">@Model.Yazar.Adi @Model.Yazar.Soyadi</a></strong></p>
+
+                </div>
+                <div class="post-block post-comments clearfix">
+                    <h3 class="heading-primary"><i class="fa fa-comments"></i>Comments (@Model.Yorums.Count)</h3>
+                    <ul class="comments">
+                        @foreach (Yorum item in Model.Yorums)
+                        {
+                            <li>
+                                <div class="comment">
+                                    <div class="img-thumbnail">
+                                        <img class="avatar" alt="@item.Yazar.Resim.Adi" src="@item.Yazar.Resim.Yazar">
+                                    </div>
+                                    <div class="comment-block">
+                                        <div class="comment-arrow"></div>
+                                        <span class="comment-by">
+                                            <strong style="color:#429FD1">@item.Yazar.Adi @item.Yazar.Soyadi</strong>
+
+                                        </span>
+                                        <p style="font-weight:bold;color:black">@item.Icerik</p>
+                                        <span style="color:#429FD1" class="date pull-right">@item.EkelemeTarixi.Value.ToString("MMMM dd yyyy, hh mm")</span>
+                                    </div>
+                                </div>
+
+                            </li>
+                        }
+
+
+                    </ul>
+                </div>
+               
+                <div class="post-block post-leave-comment">
+                    <h3 class="heading-primary">Leave a comment</h3>
+                    @if (Session["id"] == null)
+                    {
+                    <form action="/Comment/E" method="post">
+                        <input type="hidden" name="id" value="@Model.id" />
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <label>Your name *</label>
+                                    <input type="text" value="" class="form-control" name="name" id="name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Your password *</label>
+                                    <input type="password" class="form-control" name="password" id="email">
+                                </div>
+                            </div>
+                        </div> <div class="row">
+                            <div class="col-md-12">
+                                <input type="submit" value="Post" class="btn btn-primary btn-lg" data-loading-text="Loading...">
+                            </div>
+                        </div>
+                    </form>
+                       
+                    }
+                        
+
+
+                            @if (Session["id"] != null)
+                            {
+                    <form action="/Comment/Add" method="post">
+                        <div class="row">
+                            <input type="hidden" value="@Model.id" name="id"/>
+                            <div class="form-group">
+                                <input name="MakaleID" type="hidden" value="@Model.id" />
+                                <div class="col-md-12">
+                                    <label>Comment *</label>
+                                    <textarea maxlength="5000" name="Icerik" rows="10" class="form-control" id="comment"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="submit" value="Post Comment" class="btn btn-primary btn-lg" data-loading-text="Loading...">
+                            </div>
+                        </div>
+                    </form>
+                        }
+
+                   
+                </div>
+                
+            </div>
+        </article>
+    </div>
+</div>
+

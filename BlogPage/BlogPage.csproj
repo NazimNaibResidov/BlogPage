@@ -1,0 +1,777 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D65F0F2B-3D69-4DA9-B4E7-8A8D59AB3A31}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BlogPage</RootNamespace>
+    <AssemblyName>BlogPage</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Content\config\Tools.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MakaleController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Applications.cs" />
+    <Compile Include="Models\aspnet_Membership.cs" />
+    <Compile Include="Models\aspnet_Paths.cs" />
+    <Compile Include="Models\aspnet_PersonalizationAllUsers.cs" />
+    <Compile Include="Models\aspnet_PersonalizationPerUser.cs" />
+    <Compile Include="Models\aspnet_Profile.cs" />
+    <Compile Include="Models\aspnet_Roles.cs" />
+    <Compile Include="Models\aspnet_SchemaVersions.cs" />
+    <Compile Include="Models\aspnet_Users.cs" />
+    <Compile Include="Models\aspnet_WebEvent_Events.cs" />
+    <Compile Include="Models\BlogContext.cs" />
+    <Compile Include="Models\Kategori.cs" />
+    <Compile Include="Models\Makale.cs" />
+    <Compile Include="Models\Mapping\aspnet_ApplicationsMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_MembershipMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_PathsMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_PersonalizationAllUsersMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_PersonalizationPerUserMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_ProfileMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_RolesMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_SchemaVersionsMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_UsersMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_WebEvent_EventsMap.cs" />
+    <Compile Include="Models\Mapping\KategoriMap.cs" />
+    <Compile Include="Models\Mapping\MakaleMap.cs" />
+    <Compile Include="Models\Mapping\ResimMap.cs" />
+    <Compile Include="Models\Mapping\sysdiagramMap.cs" />
+    <Compile Include="Models\Mapping\vw_aspnet_ApplicationsMap.cs" />
+    <Compile Include="Models\Mapping\vw_aspnet_MembershipUsersMap.cs" />
+    <Compile Include="Models\Mapping\vw_aspnet_ProfilesMap.cs" />
+    <Compile Include="Models\Mapping\vw_aspnet_RolesMap.cs" />
+    <Compile Include="Models\Mapping\vw_aspnet_UsersInRolesMap.cs" />
+    <Compile Include="Models\Mapping\vw_aspnet_UsersMap.cs" />
+    <Compile Include="Models\Mapping\vw_aspnet_WebPartState_PathsMap.cs" />
+    <Compile Include="Models\Mapping\vw_aspnet_WebPartState_SharedMap.cs" />
+    <Compile Include="Models\Mapping\vw_aspnet_WebPartState_UserMap.cs" />
+    <Compile Include="Models\Mapping\YazarMap.cs" />
+    <Compile Include="Models\Mapping\YorumMap.cs" />
+    <Compile Include="Models\Resim.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\users.cs" />
+    <Compile Include="Models\vw_aspnet_Applications.cs" />
+    <Compile Include="Models\vw_aspnet_MembershipUsers.cs" />
+    <Compile Include="Models\vw_aspnet_Profiles.cs" />
+    <Compile Include="Models\vw_aspnet_Roles.cs" />
+    <Compile Include="Models\vw_aspnet_Users.cs" />
+    <Compile Include="Models\vw_aspnet_UsersInRoles.cs" />
+    <Compile Include="Models\vw_aspnet_WebPartState_Paths.cs" />
+    <Compile Include="Models\vw_aspnet_WebPartState_Shared.cs" />
+    <Compile Include="Models\vw_aspnet_WebPartState_User.cs" />
+    <Compile Include="Models\Yazar.cs" />
+    <Compile Include="Models\Yorum.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Age.png" />
+    <Content Include="Content\blog-medium-image.html" />
+    <Content Include="Content\css\custom.css" />
+    <Content Include="Content\css\demos\demo-app-landing.css" />
+    <Content Include="Content\css\demos\demo-business-consulting.css" />
+    <Content Include="Content\css\demos\demo-church.css" />
+    <Content Include="Content\css\demos\demo-construction.css" />
+    <Content Include="Content\css\demos\demo-digital-agency.css" />
+    <Content Include="Content\css\demos\demo-event.css" />
+    <Content Include="Content\css\demos\demo-finance.css" />
+    <Content Include="Content\css\demos\demo-gym.css" />
+    <Content Include="Content\css\demos\demo-hotel.css" />
+    <Content Include="Content\css\demos\demo-law-firm.css" />
+    <Content Include="Content\css\demos\demo-medical.css" />
+    <Content Include="Content\css\demos\demo-one-page-agency.css" />
+    <Content Include="Content\css\demos\demo-photography-2.css" />
+    <Content Include="Content\css\demos\demo-photography-3.css" />
+    <Content Include="Content\css\demos\demo-photography.css" />
+    <Content Include="Content\css\demos\demo-real-estate.css" />
+    <Content Include="Content\css\demos\demo-restaurant.css" />
+    <Content Include="Content\css\demos\demo-resume.css" />
+    <Content Include="Content\css\demos\demo-shop-1.css" />
+    <Content Include="Content\css\demos\demo-shop-10.css" />
+    <Content Include="Content\css\demos\demo-shop-11.css" />
+    <Content Include="Content\css\demos\demo-shop-12.css" />
+    <Content Include="Content\css\demos\demo-shop-13.css" />
+    <Content Include="Content\css\demos\demo-shop-14.css" />
+    <Content Include="Content\css\demos\demo-shop-15.css" />
+    <Content Include="Content\css\demos\demo-shop-16.css" />
+    <Content Include="Content\css\demos\demo-shop-17.css" />
+    <Content Include="Content\css\demos\demo-shop-18.css" />
+    <Content Include="Content\css\demos\demo-shop-19.css" />
+    <Content Include="Content\css\demos\demo-shop-2.css" />
+    <Content Include="Content\css\demos\demo-shop-3.css" />
+    <Content Include="Content\css\demos\demo-shop-4.css" />
+    <Content Include="Content\css\demos\demo-shop-5.css" />
+    <Content Include="Content\css\demos\demo-shop-6.css" />
+    <Content Include="Content\css\demos\demo-shop-7.css" />
+    <Content Include="Content\css\demos\demo-shop-8.css" />
+    <Content Include="Content\css\demos\demo-shop-9.css" />
+    <Content Include="Content\css\demos\demo-wedding.css" />
+    <Content Include="Content\css\fonts\minicart-font.svg" />
+    <Content Include="Content\css\fonts\star.svg" />
+    <Content Include="Content\css\skins\default.css" />
+    <Content Include="Content\css\skins\skin-app-landing.css" />
+    <Content Include="Content\css\skins\skin-business-consulting.css" />
+    <Content Include="Content\css\skins\skin-church.css" />
+    <Content Include="Content\css\skins\skin-construction.css" />
+    <Content Include="Content\css\skins\skin-corporate-3.css" />
+    <Content Include="Content\css\skins\skin-corporate-4.css" />
+    <Content Include="Content\css\skins\skin-corporate-5.css" />
+    <Content Include="Content\css\skins\skin-corporate-6.css" />
+    <Content Include="Content\css\skins\skin-corporate-7.css" />
+    <Content Include="Content\css\skins\skin-corporate-8.css" />
+    <Content Include="Content\css\skins\skin-corporate-hosting.css" />
+    <Content Include="Content\css\skins\skin-digital-agency.css" />
+    <Content Include="Content\css\skins\skin-event.css" />
+    <Content Include="Content\css\skins\skin-finance.css" />
+    <Content Include="Content\css\skins\skin-gym.css" />
+    <Content Include="Content\css\skins\skin-hotel.css" />
+    <Content Include="Content\css\skins\skin-law-firm.css" />
+    <Content Include="Content\css\skins\skin-medical.css" />
+    <Content Include="Content\css\skins\skin-one-page-agency.css" />
+    <Content Include="Content\css\skins\skin-photography.css" />
+    <Content Include="Content\css\skins\skin-real-estate.css" />
+    <Content Include="Content\css\skins\skin-restaurant.css" />
+    <Content Include="Content\css\skins\skin-resume.css" />
+    <Content Include="Content\css\skins\skin-shop-1.css" />
+    <Content Include="Content\css\skins\skin-shop-10.css" />
+    <Content Include="Content\css\skins\skin-shop-11.css" />
+    <Content Include="Content\css\skins\skin-shop-12.css" />
+    <Content Include="Content\css\skins\skin-shop-13.css" />
+    <Content Include="Content\css\skins\skin-shop-14.css" />
+    <Content Include="Content\css\skins\skin-shop-15.css" />
+    <Content Include="Content\css\skins\skin-shop-16.css" />
+    <Content Include="Content\css\skins\skin-shop-17.css" />
+    <Content Include="Content\css\skins\skin-shop-18.css" />
+    <Content Include="Content\css\skins\skin-shop-19.css" />
+    <Content Include="Content\css\skins\skin-shop-2.css" />
+    <Content Include="Content\css\skins\skin-shop-3.css" />
+    <Content Include="Content\css\skins\skin-shop-4.css" />
+    <Content Include="Content\css\skins\skin-shop-5.css" />
+    <Content Include="Content\css\skins\skin-shop-6.css" />
+    <Content Include="Content\css\skins\skin-shop-7.css" />
+    <Content Include="Content\css\skins\skin-shop-8.css" />
+    <Content Include="Content\css\skins\skin-shop-9.css" />
+    <Content Include="Content\css\skins\skin-wedding.css" />
+    <Content Include="Content\css\theme-blog.css" />
+    <Content Include="Content\css\theme-elements.css" />
+    <Content Include="Content\css\theme-shop.css" />
+    <Content Include="Content\css\theme.css" />
+    <Content Include="Content\img\profil\Gray.jpg" />
+    <Content Include="Content\js\custom.js" />
+    <Content Include="Content\js\demos\demo-app-landing.js" />
+    <Content Include="Content\js\demos\demo-business-consulting.js" />
+    <Content Include="Content\js\demos\demo-church.js" />
+    <Content Include="Content\js\demos\demo-construction.js" />
+    <Content Include="Content\js\demos\demo-event.js" />
+    <Content Include="Content\js\demos\demo-finance.js" />
+    <Content Include="Content\js\demos\demo-gym.js" />
+    <Content Include="Content\js\demos\demo-hotel.js" />
+    <Content Include="Content\js\demos\demo-law-firm.js" />
+    <Content Include="Content\js\demos\demo-medical.js" />
+    <Content Include="Content\js\demos\demo-one-page-agency.js" />
+    <Content Include="Content\js\demos\demo-photography.js" />
+    <Content Include="Content\js\demos\demo-real-estate.js" />
+    <Content Include="Content\js\demos\demo-resume.js" />
+    <Content Include="Content\js\demos\demo-shop-1.js" />
+    <Content Include="Content\js\demos\demo-shop-10.js" />
+    <Content Include="Content\js\demos\demo-shop-11.js" />
+    <Content Include="Content\js\demos\demo-shop-12.js" />
+    <Content Include="Content\js\demos\demo-shop-13.js" />
+    <Content Include="Content\js\demos\demo-shop-14.js" />
+    <Content Include="Content\js\demos\demo-shop-15.js" />
+    <Content Include="Content\js\demos\demo-shop-16.js" />
+    <Content Include="Content\js\demos\demo-shop-17.js" />
+    <Content Include="Content\js\demos\demo-shop-18.js" />
+    <Content Include="Content\js\demos\demo-shop-19.js" />
+    <Content Include="Content\js\demos\demo-shop-2.js" />
+    <Content Include="Content\js\demos\demo-shop-3.js" />
+    <Content Include="Content\js\demos\demo-shop-4.js" />
+    <Content Include="Content\js\demos\demo-shop-5.js" />
+    <Content Include="Content\js\demos\demo-shop-6.js" />
+    <Content Include="Content\js\demos\demo-shop-7.js" />
+    <Content Include="Content\js\demos\demo-shop-8.js" />
+    <Content Include="Content\js\demos\demo-shop-9.js" />
+    <Content Include="Content\js\demos\demo-wedding.js" />
+    <Content Include="Content\js\examples\examples.carousels.js" />
+    <Content Include="Content\js\examples\examples.demos.js" />
+    <Content Include="Content\js\examples\examples.gallery.js" />
+    <Content Include="Content\js\examples\examples.lightboxes.js" />
+    <Content Include="Content\js\examples\examples.portfolio.js" />
+    <Content Include="Content\js\theme.init.js" />
+    <Content Include="Content\js\theme.js" />
+    <Content Include="Content\js\views\view.contact.js" />
+    <Content Include="Content\js\views\view.home.js" />
+    <Content Include="Content\tenor.gif" />
+    <Content Include="Content\vendor\animate\animate.min.css" />
+    <Content Include="Content\vendor\bootpag\bootpag.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\bootstrap-datepicker.min.js" />
+    <Content Include="Content\vendor\bootstrap-datepicker\bootstrap-datepicker3.css" />
+    <Content Include="Content\vendor\bootstrap-rtl\bootstrap-rtl.css" />
+    <Content Include="Content\vendor\bootstrap-touchspin\jquery.bootstrap-touchspin.css" />
+    <Content Include="Content\vendor\bootstrap-touchspin\jquery.bootstrap-touchspin.js" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\vendor\bootstrap\js\npm.js" />
+    <Content Include="Content\vendor\circle-flip-slideshow\css\component.css" />
+    <Content Include="Content\vendor\circle-flip-slideshow\js\jquery.flipshow.js" />
+    <Content Include="Content\vendor\circle-flip-slideshow\js\jquery.flipshow.min.js" />
+    <Content Include="Content\vendor\circle-flip-slideshow\README.txt" />
+    <Content Include="Content\vendor\common\common.js" />
+    <Content Include="Content\vendor\common\common.min.js" />
+    <Content Include="Content\vendor\elevatezoom\jquery.elevatezoom.js" />
+    <Content Include="Content\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\vendor\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Content\vendor\instafeed\instafeed.js" />
+    <Content Include="Content\vendor\instafeed\instafeed.min.js" />
+    <Content Include="Content\vendor\isotope\jquery.isotope.min.js" />
+    <Content Include="Content\vendor\jquery-cookie\jquery-cookie.js" />
+    <Content Include="Content\vendor\jquery-cookie\jquery-cookie.min.js" />
+    <Content Include="Content\vendor\jquery-mousewheel\jquery.mousewheel.js" />
+    <Content Include="Content\vendor\jquery-mousewheel\jquery.mousewheel.min.js" />
+    <Content Include="Content\vendor\jquery.appear\jquery.appear.js" />
+    <Content Include="Content\vendor\jquery.appear\jquery.appear.min.js" />
+    <Content Include="Content\vendor\jquery.countdown\jquery.countdown.js" />
+    <Content Include="Content\vendor\jquery.countdown\jquery.countdown.min.js" />
+    <Content Include="Content\vendor\jquery.easing\jquery.easing.js" />
+    <Content Include="Content\vendor\jquery.easing\jquery.easing.min.js" />
+    <Content Include="Content\vendor\jquery.easy-pie-chart\jquery.easy-pie-chart.js" />
+    <Content Include="Content\vendor\jquery.easy-pie-chart\jquery.easy-pie-chart.min.js" />
+    <Content Include="Content\vendor\jquery.gmap\jquery.gmap.js" />
+    <Content Include="Content\vendor\jquery.gmap\jquery.gmap.min.js" />
+    <Content Include="Content\vendor\jquery.lazyload\jquery.lazyload.js" />
+    <Content Include="Content\vendor\jquery.lazyload\jquery.lazyload.min.js" />
+    <Content Include="Content\vendor\jquery.lazyload\jquery.scrollstop.js" />
+    <Content Include="Content\vendor\jquery.validation\jquery.validation.js" />
+    <Content Include="Content\vendor\jquery.validation\jquery.validation.min.js" />
+    <Content Include="Content\vendor\jquery\jquery.js" />
+    <Content Include="Content\vendor\jquery\jquery.min.js" />
+    <Content Include="Content\vendor\magnific-popup\jquery.magnific-popup.js" />
+    <Content Include="Content\vendor\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="Content\vendor\magnific-popup\magnific-popup.css" />
+    <Content Include="Content\vendor\magnific-popup\magnific-popup.min.css" />
+    <Content Include="Content\vendor\modernizr\modernizr.min.js" />
+    <Content Include="Content\vendor\nivo-slider\bar\arrows.png" />
+    <Content Include="Content\vendor\nivo-slider\bar\bar.css" />
+    <Content Include="Content\vendor\nivo-slider\bar\bullets.png" />
+    <Content Include="Content\vendor\nivo-slider\bar\loading.gif" />
+    <Content Include="Content\vendor\nivo-slider\dark\arrows.png" />
+    <Content Include="Content\vendor\nivo-slider\dark\bullets.png" />
+    <Content Include="Content\vendor\nivo-slider\dark\dark.css" />
+    <Content Include="Content\vendor\nivo-slider\dark\loading.gif" />
+    <Content Include="Content\vendor\nivo-slider\default\arrows.png" />
+    <Content Include="Content\vendor\nivo-slider\default\bullets.png" />
+    <Content Include="Content\vendor\nivo-slider\default\default.css" />
+    <Content Include="Content\vendor\nivo-slider\default\loading.gif" />
+    <Content Include="Content\vendor\nivo-slider\jquery.nivo.slider.js" />
+    <Content Include="Content\vendor\nivo-slider\jquery.nivo.slider.min.js" />
+    <Content Include="Content\vendor\nivo-slider\light\arrows.png" />
+    <Content Include="Content\vendor\nivo-slider\light\bullets.png" />
+    <Content Include="Content\vendor\nivo-slider\light\light.css" />
+    <Content Include="Content\vendor\nivo-slider\light\loading.gif" />
+    <Content Include="Content\vendor\nivo-slider\nivo-slider.css" />
+    <Content Include="Content\vendor\nouislider\nouislider.css" />
+    <Content Include="Content\vendor\nouislider\nouislider.min.js" />
+    <Content Include="Content\vendor\owl.carousel\assets\ajax-loader.gif" />
+    <Content Include="Content\vendor\owl.carousel\assets\owl.carousel.css" />
+    <Content Include="Content\vendor\owl.carousel\assets\owl.carousel.min.css" />
+    <Content Include="Content\vendor\owl.carousel\assets\owl.theme.default.css" />
+    <Content Include="Content\vendor\owl.carousel\assets\owl.theme.default.min.css" />
+    <Content Include="Content\vendor\owl.carousel\assets\owl.theme.green.css" />
+    <Content Include="Content\vendor\owl.carousel\assets\owl.theme.green.min.css" />
+    <Content Include="Content\vendor\owl.carousel\assets\owl.video.play.png" />
+    <Content Include="Content\vendor\owl.carousel\owl.carousel.js" />
+    <Content Include="Content\vendor\owl.carousel\owl.carousel.min.js" />
+    <Content Include="Content\vendor\requirejs\requirejs.js" />
+    <Content Include="Content\vendor\respond\respond.js" />
+    <Content Include="Content\vendor\rs-plugin\addon-visual-editor\readme.txt" />
+    <Content Include="Content\vendor\rs-plugin\assets\coloredbg.png" />
+    <Content Include="Content\vendor\rs-plugin\assets\gridtile.png" />
+    <Content Include="Content\vendor\rs-plugin\assets\gridtile_3x3.png" />
+    <Content Include="Content\vendor\rs-plugin\assets\gridtile_3x3_white.png" />
+    <Content Include="Content\vendor\rs-plugin\assets\gridtile_white.png" />
+    <Content Include="Content\vendor\rs-plugin\assets\loader.gif" />
+    <Content Include="Content\vendor\rs-plugin\assets\sources\fb.png" />
+    <Content Include="Content\vendor\rs-plugin\assets\sources\fr.png" />
+    <Content Include="Content\vendor\rs-plugin\assets\sources\ig.png" />
+    <Content Include="Content\vendor\rs-plugin\assets\sources\post.png" />
+    <Content Include="Content\vendor\rs-plugin\assets\sources\revolution_slide1.png" />
+    <Content Include="Content\vendor\rs-plugin\assets\sources\revolution_slide2.png" />
+    <Content Include="Content\vendor\rs-plugin\assets\sources\tw.png" />
+    <Content Include="Content\vendor\rs-plugin\assets\sources\vm.png" />
+    <Content Include="Content\vendor\rs-plugin\assets\sources\wc.png" />
+    <Content Include="Content\vendor\rs-plugin\assets\sources\yt.png" />
+    <Content Include="Content\vendor\rs-plugin\assets\svg\index.php" />
+    <Content Include="Content\vendor\rs-plugin\css\closedhand.cur" />
+    <Content Include="Content\vendor\rs-plugin\css\index.php" />
+    <Content Include="Content\vendor\rs-plugin\css\layers.css" />
+    <Content Include="Content\vendor\rs-plugin\css\navigation-skins\ares.css" />
+    <Content Include="Content\vendor\rs-plugin\css\navigation-skins\custom.css" />
+    <Content Include="Content\vendor\rs-plugin\css\navigation-skins\dione.css" />
+    <Content Include="Content\vendor\rs-plugin\css\navigation-skins\erinyen.css" />
+    <Content Include="Content\vendor\rs-plugin\css\navigation-skins\gyges.css" />
+    <Content Include="Content\vendor\rs-plugin\css\navigation-skins\hades.css" />
+    <Content Include="Content\vendor\rs-plugin\css\navigation-skins\hebe.css" />
+    <Content Include="Content\vendor\rs-plugin\css\navigation-skins\hephaistos.css" />
+    <Content Include="Content\vendor\rs-plugin\css\navigation-skins\hermes.css" />
+    <Content Include="Content\vendor\rs-plugin\css\navigation-skins\hesperiden.css" />
+    <Content Include="Content\vendor\rs-plugin\css\navigation-skins\metis.css" />
+    <Content Include="Content\vendor\rs-plugin\css\navigation-skins\persephone.css" />
+    <Content Include="Content\vendor\rs-plugin\css\navigation-skins\uranus.css" />
+    <Content Include="Content\vendor\rs-plugin\css\navigation-skins\zeus.css" />
+    <Content Include="Content\vendor\rs-plugin\css\navigation.css" />
+    <Content Include="Content\vendor\rs-plugin\css\openhand.cur" />
+    <Content Include="Content\vendor\rs-plugin\css\settings-ver.5.3.1.css" />
+    <Content Include="Content\vendor\rs-plugin\css\settings.css" />
+    <Content Include="Content\vendor\rs-plugin\fonts\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\vendor\rs-plugin\fonts\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\vendor\rs-plugin\fonts\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\vendor\rs-plugin\fonts\font-awesome\index.php" />
+    <Content Include="Content\vendor\rs-plugin\fonts\index.php" />
+    <Content Include="Content\vendor\rs-plugin\fonts\pe-icon-7-stroke\css\helper.css" />
+    <Content Include="Content\vendor\rs-plugin\fonts\pe-icon-7-stroke\css\index.php" />
+    <Content Include="Content\vendor\rs-plugin\fonts\pe-icon-7-stroke\css\pe-icon-7-stroke.css" />
+    <Content Include="Content\vendor\rs-plugin\fonts\pe-icon-7-stroke\fonts\index.php" />
+    <Content Include="Content\vendor\rs-plugin\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="Content\vendor\rs-plugin\fonts\pe-icon-7-stroke\index.php" />
+    <Content Include="Content\vendor\rs-plugin\fonts\revicons\index.php" />
+    <Content Include="Content\vendor\rs-plugin\fonts\revicons\revicons.svg" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\index.php" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\revolution.extension.actions.min.js" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\revolution.extension.carousel.min.js" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\revolution.extension.kenburn.min.js" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\revolution.extension.layeranimation.min.js" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\revolution.extension.migration.min.js" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\revolution.extension.navigation.min.js" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\revolution.extension.parallax.min.js" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\revolution.extension.slideanims.min.js" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\revolution.extension.video.min.js" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\source\index.php" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\source\revolution.extension.actions.js" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\source\revolution.extension.carousel.js" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\source\revolution.extension.kenburn.js" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\source\revolution.extension.layeranimation.js" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\source\revolution.extension.migration.js" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\source\revolution.extension.navigation.js" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\source\revolution.extension.parallax.js" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\source\revolution.extension.slideanims.js" />
+    <Content Include="Content\vendor\rs-plugin\js\extensions\source\revolution.extension.video.js" />
+    <Content Include="Content\vendor\rs-plugin\js\index.php" />
+    <Content Include="Content\vendor\rs-plugin\js\jquery.themepunch.enablelog.js" />
+    <Content Include="Content\vendor\rs-plugin\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="Content\vendor\rs-plugin\js\jquery.themepunch.tools.min.js" />
+    <Content Include="Content\vendor\rs-plugin\js\source\index.php" />
+    <Content Include="Content\vendor\rs-plugin\js\source\jquery.themepunch.enablelog.js" />
+    <Content Include="Content\vendor\rs-plugin\js\source\jquery.themepunch.revolution.js" />
+    <Content Include="Content\vendor\rs-plugin\js\source\jquery.themepunch.tools.min.js" />
+    <Content Include="Content\vendor\rs-plugin\php\facebook\class-facebook.php" />
+    <Content Include="Content\vendor\rs-plugin\php\flickr\class-flickr.php" />
+    <Content Include="Content\vendor\rs-plugin\php\instagram\class-instagram.php" />
+    <Content Include="Content\vendor\rs-plugin\php\twitter\class-twitter.php" />
+    <Content Include="Content\vendor\rs-plugin\php\twitter\connection\Application.php" />
+    <Content Include="Content\vendor\rs-plugin\php\twitter\connection\ConnectionAbstract.php" />
+    <Content Include="Content\vendor\rs-plugin\php\twitter\connection\User.php" />
+    <Content Include="Content\vendor\rs-plugin\php\twitter\RestApi.php" />
+    <Content Include="Content\vendor\rs-plugin\php\vimeo\class-vimeo.php" />
+    <Content Include="Content\vendor\rs-plugin\php\youtube\class-youtube.php" />
+    <Content Include="Content\vendor\simple-line-icons\css\simple-line-icons.css" />
+    <Content Include="Content\vendor\simple-line-icons\css\simple-line-icons.min.css" />
+    <Content Include="Content\vendor\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="Content\vendor\simple-line-icons\gulpfile.js" />
+    <Content Include="Content\vendor\vide\vide.js" />
+    <Content Include="Content\vendor\vide\vide.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\img\big\" />
+    <Folder Include="Content\img\mid\" />
+    <Folder Include="Content\img\sml\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\fonts\minicart-font.eot" />
+    <Content Include="Content\css\fonts\minicart-font.ttf" />
+    <Content Include="Content\css\fonts\minicart-font.woff" />
+    <Content Include="Content\css\fonts\star.eot" />
+    <Content Include="Content\css\fonts\star.ttf" />
+    <Content Include="Content\css\fonts\star.woff" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\vendor\bourbon\addons\_border-color.scss" />
+    <Content Include="Content\vendor\bourbon\addons\_border-radius.scss" />
+    <Content Include="Content\vendor\bourbon\addons\_border-style.scss" />
+    <Content Include="Content\vendor\bourbon\addons\_border-width.scss" />
+    <Content Include="Content\vendor\bourbon\addons\_buttons.scss" />
+    <Content Include="Content\vendor\bourbon\addons\_clearfix.scss" />
+    <Content Include="Content\vendor\bourbon\addons\_ellipsis.scss" />
+    <Content Include="Content\vendor\bourbon\addons\_font-stacks.scss" />
+    <Content Include="Content\vendor\bourbon\addons\_hide-text.scss" />
+    <Content Include="Content\vendor\bourbon\addons\_margin.scss" />
+    <Content Include="Content\vendor\bourbon\addons\_padding.scss" />
+    <Content Include="Content\vendor\bourbon\addons\_position.scss" />
+    <Content Include="Content\vendor\bourbon\addons\_prefixer.scss" />
+    <Content Include="Content\vendor\bourbon\addons\_retina-image.scss" />
+    <Content Include="Content\vendor\bourbon\addons\_size.scss" />
+    <Content Include="Content\vendor\bourbon\addons\_text-inputs.scss" />
+    <Content Include="Content\vendor\bourbon\addons\_timing-functions.scss" />
+    <Content Include="Content\vendor\bourbon\addons\_triangle.scss" />
+    <Content Include="Content\vendor\bourbon\addons\_word-wrap.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_animation.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_appearance.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_backface-visibility.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_background-image.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_background.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_border-image.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_calc.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_columns.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_filter.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_flex-box.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_font-face.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_font-feature-settings.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_hidpi-media-query.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_hyphens.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_image-rendering.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_keyframes.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_linear-gradient.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_perspective.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_placeholder.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_radial-gradient.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_selection.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_text-decoration.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_transform.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_transition.scss" />
+    <Content Include="Content\vendor\bourbon\css3\_user-select.scss" />
+    <Content Include="Content\vendor\bourbon\functions\_assign-inputs.scss" />
+    <Content Include="Content\vendor\bourbon\functions\_contains-falsy.scss" />
+    <Content Include="Content\vendor\bourbon\functions\_contains.scss" />
+    <Content Include="Content\vendor\bourbon\functions\_is-length.scss" />
+    <Content Include="Content\vendor\bourbon\functions\_is-light.scss" />
+    <Content Include="Content\vendor\bourbon\functions\_is-number.scss" />
+    <Content Include="Content\vendor\bourbon\functions\_is-size.scss" />
+    <Content Include="Content\vendor\bourbon\functions\_modular-scale.scss" />
+    <Content Include="Content\vendor\bourbon\functions\_px-to-em.scss" />
+    <Content Include="Content\vendor\bourbon\functions\_px-to-rem.scss" />
+    <Content Include="Content\vendor\bourbon\functions\_shade.scss" />
+    <Content Include="Content\vendor\bourbon\functions\_strip-units.scss" />
+    <Content Include="Content\vendor\bourbon\functions\_tint.scss" />
+    <Content Include="Content\vendor\bourbon\functions\_transition-property-name.scss" />
+    <Content Include="Content\vendor\bourbon\functions\_unpack.scss" />
+    <Content Include="Content\vendor\bourbon\helpers\_convert-units.scss" />
+    <Content Include="Content\vendor\bourbon\helpers\_directional-values.scss" />
+    <Content Include="Content\vendor\bourbon\helpers\_font-source-declaration.scss" />
+    <Content Include="Content\vendor\bourbon\helpers\_gradient-positions-parser.scss" />
+    <Content Include="Content\vendor\bourbon\helpers\_linear-angle-parser.scss" />
+    <Content Include="Content\vendor\bourbon\helpers\_linear-gradient-parser.scss" />
+    <Content Include="Content\vendor\bourbon\helpers\_linear-positions-parser.scss" />
+    <Content Include="Content\vendor\bourbon\helpers\_linear-side-corner-parser.scss" />
+    <Content Include="Content\vendor\bourbon\helpers\_radial-arg-parser.scss" />
+    <Content Include="Content\vendor\bourbon\helpers\_radial-gradient-parser.scss" />
+    <Content Include="Content\vendor\bourbon\helpers\_radial-positions-parser.scss" />
+    <Content Include="Content\vendor\bourbon\helpers\_render-gradients.scss" />
+    <Content Include="Content\vendor\bourbon\helpers\_shape-size-stripper.scss" />
+    <Content Include="Content\vendor\bourbon\helpers\_str-to-num.scss" />
+    <Content Include="Content\vendor\bourbon\settings\_asset-pipeline.scss" />
+    <Content Include="Content\vendor\bourbon\settings\_prefixer.scss" />
+    <Content Include="Content\vendor\bourbon\settings\_px-to-em.scss" />
+    <Content Include="Content\vendor\bourbon\_bourbon-deprecated-upcoming.scss" />
+    <Content Include="Content\vendor\bourbon\_bourbon.scss" />
+    <Content Include="Content\vendor\font-awesome\bower.json" />
+    <Content Include="Content\vendor\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\vendor\font-awesome\less\animated.less" />
+    <Content Include="Content\vendor\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\vendor\font-awesome\less\core.less" />
+    <Content Include="Content\vendor\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\vendor\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\vendor\font-awesome\less\icons.less" />
+    <Content Include="Content\vendor\font-awesome\less\larger.less" />
+    <Content Include="Content\vendor\font-awesome\less\list.less" />
+    <Content Include="Content\vendor\font-awesome\less\mixins.less" />
+    <Content Include="Content\vendor\font-awesome\less\path.less" />
+    <Content Include="Content\vendor\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\vendor\font-awesome\less\screen-reader.less" />
+    <Content Include="Content\vendor\font-awesome\less\stacked.less" />
+    <Content Include="Content\vendor\font-awesome\less\variables.less" />
+    <Content Include="Content\vendor\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_animated.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_core.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_list.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_path.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\vendor\owl.carousel\LICENSE" />
+    <Content Include="Content\vendor\owl.carousel\README.md" />
+    <Content Include="Content\vendor\rs-plugin\addon-visual-editor\visual-editor-extension.zip" />
+    <Content Include="Content\vendor\rs-plugin\assets\svg\svg.zip" />
+    <Content Include="Content\vendor\rs-plugin\fonts\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\vendor\rs-plugin\fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\vendor\rs-plugin\fonts\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\vendor\rs-plugin\fonts\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\vendor\rs-plugin\fonts\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\vendor\rs-plugin\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="Content\vendor\rs-plugin\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="Content\vendor\rs-plugin\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="Content\vendor\rs-plugin\fonts\revicons\revicons.eot" />
+    <Content Include="Content\vendor\rs-plugin\fonts\revicons\revicons.ttf" />
+    <Content Include="Content\vendor\rs-plugin\fonts\revicons\revicons.woff" />
+    <Content Include="Content\vendor\simple-line-icons\bower.json" />
+    <Content Include="Content\vendor\simple-line-icons\CODE_OF_CONDUCT.md" />
+    <Content Include="Content\vendor\simple-line-icons\CONTRIBUTING.md" />
+    <Content Include="Content\vendor\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="Content\vendor\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="Content\vendor\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="Content\vendor\simple-line-icons\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="Content\vendor\simple-line-icons\History.md" />
+    <Content Include="Content\vendor\simple-line-icons\less\simple-line-icons.less" />
+    <Content Include="Content\vendor\simple-line-icons\LICENSE.md" />
+    <Content Include="Content\vendor\simple-line-icons\package.json" />
+    <Content Include="Content\vendor\simple-line-icons\README.md" />
+    <Content Include="Content\vendor\simple-line-icons\scss\simple-line-icons.scss" />
+    <Content Include="Content\vendor\simple-line-icons\yarn.lock" />
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\Blog.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Home\Popular.cshtml" />
+    <Content Include="Views\Home\Main.cshtml" />
+    <Content Include="Views\Users\Register.cshtml" />
+    <Content Include="Views\Users\Enter.cshtml" />
+    <Content Include="Views\Makale\Add.cshtml" />
+    <Content Include="Views\Makale\Detay.cshtml" />
+    <Content Include="Views\Roles\Add.cshtml" />
+    <Content Include="Views\Roles\AUR.cshtml" />
+    <Content Include="Views\Home\Header.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64812</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64812/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

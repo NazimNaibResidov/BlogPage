@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Blog";
+}
+@model IEnumerable<Makale>
+<div class="col-md-9">
+    <div class="blog-posts">
+
+        @foreach (Makale item in Model)
+        {
+            <article class="post post-large">
+                <div class="post-image single">
+                    <a href="/Makale/Detay/@item.id"><img class="img-thumbnail" src="@item.Resim.Big" alt="@item.Resim.Adi"></a>
+                </div>
+                <div class="post-date">
+                    <span class="day">@item.EkelemeTarixi.Day</span>
+                    <span class="month">@item.EkelemeTarixi.Month</span>
+                </div>
+                <div class="post-content">
+                    <h2><a href="/Makale/Detay/@item.id">@item.Baslik</a></h2>
+                    <p>@item.Icerik</p>
+                    <div class="post-meta">
+                        <span><i class="fa fa-user"></i> By <a href="#">@item.Yazar.Adi @item.Yazar.Soyadi</a> </span>
+
+                        <span><i class="fa fa-comments"></i> <a href="#">@item.Yorums.Count Comments</a></span>
+                        <a href="/Makale/Detay/@item.id" class="btn btn-xs btn-primary pull-right">Read more...</a>
+                    </div>
+                </div>
+            </article>
+        }
+
+        @{
+            int id = 0;
+           
+
+
+        }
+
+            <ul class="pagination pagination-lg pull-right">
+
+                @for (int i = 0; i <ViewBag.num; i++)
+                {
+                    id++;
+
+                    <li><a href="/Home/Index/@id">@id</a></li>
+                }
+
+            </ul>
+
+    </div>
+</div>
+
